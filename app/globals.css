@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+}
+
+a {
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #f4d4a7, #e8ddd4);
+}
+
+a:hover {
+    text-decoration: none;
+}

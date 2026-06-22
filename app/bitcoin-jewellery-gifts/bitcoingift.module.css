@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    /* padding: 100px var(--gutter) 60px; */
+    text-align: center;
+}
+
+.heroGlow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 200px;
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.heroEyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+}
+
+.heroTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 7vw, 4rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin: 0 0 20px;
+}
+
+.heroTitleAccent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.heroSub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.heroDivider {
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 48px auto 0;
+}
+
+/* ---------- Page Content ---------- */
+.pageContent {
+    padding: 0 var(--gutter) 100px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ---------- State: Loading / Error ---------- */
+.stateCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    gap: 16px;
+}
+
+.stateText {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.errorText {
+    color: #e07070;
+    font-size: 0.95rem;
+}
+
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--border);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- Category Section ---------- */
+.categorySection {
+    margin-bottom: 64px;
+    animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categoryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.categoryTitleGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.categoryIcon {
+    color: var(--gold);
+    font-size: 0.85rem;
+}
+
+.categoryTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.categoryCount {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+/* ---------- Nav Buttons ---------- */
+.navBtns {
+    display: flex;
+    gap: 8px;
+}
+
+.navBtn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.navBtn:hover:not(:disabled) {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+    color: var(--gold);
+}
+
+.navBtnDisabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ---------- Slider ---------- */
+.sliderOuter {
+    position: relative;
+}
+
+.sliderTrack {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+
+.sliderTrack::-webkit-scrollbar {
+    display: none;
+}
+
+.cardSlide {
+    flex: 0 0 var(--card-w);
+    scroll-snap-align: start;
+}
+
+/* Fade edges */
+.fadeEdge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fadeLeft {
+    left: 0;
+    background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.fadeRight {
+    right: 0;
+    background: linear-gradient(to left, var(--bg), transparent);
+}
+
+/* ---------- Product Card ---------- */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+.card:hover {
+    border-color: rgba(201, 168, 76, 0.35);
+}
+
+.cardImageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.3;
+    overflow: hidden;
+    background: var(--surface2);
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.06);
+}
+
+.cardImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--gold-dim);
+    background: var(--surface2);
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 11, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .cardOverlay {
+    opacity: 1;
+}
+
+.overlayText {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 8px 18px;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+}
+
+.soldOutBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(10, 10, 11, 0.85);
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+/* ---------- Card Body ---------- */
+.cardBody {
+    padding: 16px;
+}
+
+.pageRoot {
+    padding-top: 100px;
+}
+
+.cardCategory {
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 6px;
+    opacity: 0.8;
+}
+
+.cardTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #363636;
+    margin: 0 0 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardPrices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.priceTag {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--silver);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    line-height: 1.2;
+}
+
+.priceTagGold {
+    color: var(--gold-light);
+    border-color: #c9a84c40;
+    background: #c9a84c12;
+}
+
+.priceLabel {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Large screens: wider cards */
+@media (min-width: 1400px) {
+    .pageRoot {
+        --card-w: 400px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .pageRoot {
+        --card-w: 230px;
+        --gutter: 28px;
+    }
+
+    .heroTitle {
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
+    }
+}
+
+/* Mobile landscape / small tablet */
+@media (max-width: 768px) {
+    .pageRoot {
+        --card-w: 200px;
+        --gutter: 20px;
+    }
+
+    .heroDivider {
+        height: 40px;
+        margin-top: 32px;
+    }
+
+    .categoryHeader {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .categoryTitle {
+        font-size: 1.25rem;
+    }
+
+    .navBtn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .fadeEdge {
+        width: 48px;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    .pageRoot {
+        --card-w: 180px;
+        --gutter: 16px;
+    }
+
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+
+    .heroSub {
+        font-size: 0.9rem;
+    }
+
+    .categorySection {
+        margin-bottom: 48px;
+    }
+
+    .categoryCount {
+        display: none;
+    }
+
+    .cardBody {
+        padding: 12px;
+    }
+
+    .cardTitle {
+        font-size: 0.95rem;
+    }
+
+    .priceTag {
+        font-size: 0.78rem;
+        padding: 4px 8px;
+    }
+}

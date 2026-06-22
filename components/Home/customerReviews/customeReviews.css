@@ -1,0 +1,225 @@
+/* ===== Customer Reviews — Infinite Slider ===== */
+
+.cr-section {
+    padding: 60px 0;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cr-header {
+    margin-bottom: 48px;
+    padding: 0 40px;
+}
+
+.cr-header__title {
+    font-family: 'Georgia', serif;
+    font-size: clamp(26px, 4vw, 46px);
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.cr-header__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1.5px;
+    background: #c9a96e;
+    margin: 14px auto 0;
+}
+
+/* ── Slider ── */
+.cr-slider-outer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Infinite scrolling track */
+.cr-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    padding: 12px 11px;
+    animation: scrollTrack 32s linear infinite;
+}
+
+.cr-track:hover {
+    animation-play-state: paused;
+    /* Pause on hover */
+}
+
+@keyframes scrollTrack {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50%));
+    }
+}
+
+/* ── Card ── */
+.cr-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 24px 22px;
+    width: 310px;
+    flex-shrink: 0;
+    text-align: left;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cr-card:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+    transform: translateY(-4px);
+}
+
+.cr-card__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.cr-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+}
+
+.cr-card__meta {
+    flex: 1;
+}
+
+.cr-card__name {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #292929;
+    margin: 0 0 4px 0;
+}
+
+.cr-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.cr-star {
+    font-size: 14px;
+}
+
+.cr-star--filled {
+    color: #f5b800;
+}
+
+.cr-star--empty {
+    color: #d0d0d0;
+}
+
+.cr-google-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.85;
+}
+
+.cr-card__date {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #838383;
+    margin: 5px 0 12px 0;
+}
+
+.cr-card__review {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444444;
+    margin: 0;
+}
+
+/* ── Animated dots ── */
+.cr-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 36px;
+}
+
+.cr-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d4cfc6;
+    animation: dotPulse 32s linear infinite;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    15%,
+    100% {
+        background: #d4cfc6;
+        transform: scale(1);
+    }
+
+    5%,
+    10% {
+        background: #c9a96e;
+        transform: scale(1.5);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .cr-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .cr-card {
+        width: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cr-section {
+        padding: 40px 0;
+    }
+
+    .cr-header {
+        padding: 0 20px;
+    }
+
+    .cr-header__title {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .cr-card {
+        width: 230px;
+        padding: 18px 16px;
+    }
+}

@@ -1,0 +1,583 @@
+/* ─────────────────────────────────────
+   Bitcoin × Natalie — Page Styles
+───────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap');
+
+/* Root */
+.bxn-page {
+    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ── Header ── */
+.bxn-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.5px solid #e0ddd6;
+}
+
+.bxn-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: #1a1a1a;
+}
+
+.title-gold {
+    color: #B8860B;
+}
+
+.title-silver {
+    color: #707070;
+}
+
+.title-x {
+    color: #b0aea8;
+    font-weight: 300;
+    margin: 0 0.2em;
+}
+
+.bxn-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 6px;
+}
+
+/* ── Select Form ── */
+.select-form {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Metal cards row */
+.metal-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.metal-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.silver-card {
+    border: 0.5px solid #C8C8C8;
+    background: #FAFAFA;
+}
+
+.gold-card {
+    border: 0.5px solid #D4A017;
+    background: #FFFDF5;
+}
+
+.metal-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.metal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-silver {
+    background: #B0B0B0;
+    border: 1.5px solid #808080;
+}
+
+.dot-gold {
+    background: #D4A017;
+    border: 1.5px solid #B8860B;
+}
+
+.metal-card select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.preview-icon {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Form fields */
+.form-field {
+    background: #fff;
+    border: 0.5px solid #e5e5e0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.field-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: #aaa;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.price-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-row .form-field {
+    margin-bottom: 0;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.pay-btn:hover {
+    opacity: 0.85;
+}
+
+.pay-btn:active {
+    transform: scale(0.99);
+}
+
+/* ── Back button ── */
+.back-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s;
+}
+
+.back-btn:hover {
+    color: #1a1a1a;
+}
+
+/* ── Checkout layout ── */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.checkout-card {
+    background: #fff;
+    border: 0.5px solid #e5e5e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid #eee;
+}
+
+/* Billing grid */
+.billing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.billing-full {
+    grid-column: 1 / -1;
+}
+
+.billing-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.billing-group input,
+.billing-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 0.5px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.billing-group input:focus,
+.billing-group select:focus {
+    border-color: #aaa;
+}
+
+/* Stripe elements */
+.stripe-input-box {
+    padding: 9px 12px;
+    border: 0.5px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: border-color 0.15s;
+}
+
+.stripe-input-box:focus-within {
+    border-color: #aaa;
+}
+
+/* Payment error */
+.payment-error {
+    background: #fdf3f3;
+    color: #c0392b;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    font-size: 13px;
+    border: 0.5px solid #f5c6cb;
+}
+
+.privacy-note {
+    margin-top: 0.75rem;
+    font-size: 11px;
+    color: #999;
+    line-height: 1.6;
+}
+
+/* ── Order items ── */
+.checkout-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-item-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #f0ede8;
+}
+
+.order-item-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.order-item-row:first-of-type {
+    padding-top: 0;
+}
+
+.item-thumb {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0.5px solid #e8e5e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 11px;
+    color: #888;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.item-desc {
+    display: block;
+    width: 100%;
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+.item-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Metal badges */
+.metal-badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+}
+
+.badge-silver {
+    background: #F0F0F0;
+    color: #606060;
+    border: 0.5px solid #C0C0C0;
+}
+
+.badge-gold {
+    background: #FDF6E3;
+    color: #8B6914;
+    border: 0.5px solid #D4A017;
+}
+
+/* Summary totals */
+.summary-totals {
+    padding: 1.25rem;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #888;
+    padding: 5px 0;
+}
+
+.grand-total {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    border-top: 0.5px solid #eee;
+    margin-top: 8px;
+    padding-top: 10px;
+}
+
+/* Place order button */
+.place-order-btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.place-order-btn:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+.place-order-btn:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.place-order-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Success ── */
+.success-card {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    border: 0.5px solid #e5e5e0;
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 0 auto 1.25rem;
+}
+
+.success-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.success-sub {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+}
+
+.success-details {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 0.5px solid #f0ede8;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span:first-child {
+    color: #888;
+}
+
+.detail-row span:last-child {
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.continue-btn {
+    display: inline-block;
+    padding: 12px 2rem;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.continue-btn:hover {
+    opacity: 0.85;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .metal-row {
+        grid-template-columns: 1fr;
+    }
+
+    .price-row {
+        grid-template-columns: 1fr;
+    }
+
+    .billing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .billing-full {
+        grid-column: 1;
+    }
+}
